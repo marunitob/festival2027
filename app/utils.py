@@ -2,6 +2,7 @@ from app.db_classes import Film, Beseda, Workshop, Host
 from . import ALLOWED_EXTENSIONS, db, app
 import json
 import random
+import os
 
 def get_rooms() -> dict:
     """
@@ -75,7 +76,13 @@ def get_object_by_uid(uid, correct=True):
         return Host.query.get(item_id)
     
 def load_albums():
-    app.albums_dict = json.load(open('app/static/fotogalerie/albums.json', 'r'))
+    albums_path = app.config['ALBUMS_JSON']
+    # slozka i soubor jsou v gitignore, takze pri prvnim spusteni je potreba je vytvorit
+    os.makedirs(os.path.dirname(albums_path), exist_ok=True)
+    if not os.path.exists(albums_path):
+        with open(albums_path, 'w') as f:
+            json.dump({}, f)
+    app.albums_dict = json.load(open(albums_path, 'r'))
 
 def write_albums():
     json.dump(app.albums_dict, open(app.config['ALBUMS_JSON'], 'w'))

@@ -8,7 +8,9 @@ import os
 
 app = Flask(__name__)
 app.secret_key = 'dev'
-app.config.from_pyfile('../instance/config.py')
+# instance/config.py je gitignored (muze obsahovat lokalni/produkcni secrets) a nemusi existovat,
+# proto silent=True - kdyz tam neni, pouziji se jenom defaultni hodnoty nastavene nize
+app.config.from_pyfile('../instance/config.py', silent=True)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 
 app.config['ALBUMS_JSON'] = 'app/static/fotogalerie/albums.json'
@@ -56,5 +58,5 @@ app.register_blueprint(shop_blueprint)
 from app import routs
 from app import errors
 
-if not "program_items" in os.listdir(app.config["UPLOAD_FOLDER"]):
-    os.mkdir(os.path.join(app.config["UPLOAD_FOLDER"], "program_items"))
+# slozky pro upload nejsou v gitu (viz .gitignore), takze je potreba je pri prvnim spusteni vytvorit
+os.makedirs(os.path.join(app.config["UPLOAD_FOLDER"], "program_items"), exist_ok=True)
