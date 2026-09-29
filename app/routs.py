@@ -99,7 +99,7 @@ def workshopy():
     return render_template('workshopy.html', items=Workshop.query.all())
 
 @app.route('/filmy')
-# @wip_disabled # commented out temporarely
+@wip_disabled
 def filmy():
     films = Film.query.filter_by(hidden=False).all()
     films.sort(key=lambda x: (x.name.startswith("?"), x.name.lower()))
