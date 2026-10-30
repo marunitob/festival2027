@@ -20,10 +20,12 @@ def update_from_json():
         if not correct_uid(uid, h_allowed=False): abort(400)
         item_type, item_id = uid.split('_')
         item_id = int(item_id)
-        match item_type:
-            case 'f': item = Film.query.get(item_id)
-            case 'b': item = Beseda.query.get(item_id)
-            case 'w': item = Workshop.query.get(item_id)
+        if item_type == 'f':
+            item = Film.query.get(item_id)
+        elif item_type == 'b':
+            item = Beseda.query.get(item_id)
+        elif item_type == 'w':
+            item = Workshop.query.get(item_id)
         item.time_from = item_details['time_from']
         item.time_to = item_details['time_to']
         item.room = item_details['room']
