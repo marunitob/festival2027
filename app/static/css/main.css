@@ -8,7 +8,7 @@
     --division-line-color: var(--secondary-color); /* barva cary mezi topnavem a contentem a footerem a contentem */
     --responsive-topnav-color: #10000f;
     --link-color: var(--text-color);
-    --hover-link-color: #d16a17;
+    --hover-link-color: #ff81df;
     --button-color: #f081cf;
     --button-text-color: var(--bg-color);
     --disabled-button-color: #b84695;
