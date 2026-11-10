@@ -1,20 +1,20 @@
 :root.dark {
-    --text-color: #ffd4ef;
+    --text-color: #f299cb;
     --secondary-text-color: #bdc5cc;
-    --bg-color: #000b4d;
-    --active-page-color: #ff80e8;
-    --secondary-color: #e946cb;
-    --topnav-color: #000b4d;
-    --division-line-color: #47153e; /* barva cary mezi topnavem a contentem a footerem a contentem */
+    --bg-color: #540335;
+    --active-page-color: var(--button-color);
+    --secondary-color: #f499d8;
+    --topnav-color: var(--bg-color);
+    --division-line-color: var(--secondary-color); /* barva cary mezi topnavem a contentem a footerem a contentem */
     --responsive-topnav-color: #10000f;
     --link-color: var(--text-color);
-    --hover-link-color: #ffa8df;
-    --button-color: #ff80e8;
+    --hover-link-color: #d16a17;
+    --button-color: #f081cf;
     --button-text-color: var(--bg-color);
-    --disabled-button-color: #b188a9;
-    --disabled-text-color: #c7e2ef;
+    --disabled-button-color: #b84695;
+    --disabled-text-color: #efc8de;
     --favorite-color: #ffff00;
-    --table-hover-color: #4b0000bb;
+    --table-hover-color: var(--secondary-color);
     --search-highlight-color: #fceb04ad;
     --form-color: #11171b;
     --form-field-color: #37363e;
@@ -25,22 +25,22 @@
 }
 
 :root, :root.light {
-    --text-color: #240202;
+    --text-color: #5d033b;
     --secondary-text-color: #3b1010;
-    --bg-color: #fddcf1;
-    --active-page-color: #55a5cabb;
-    --secondary-color: #00b7ce;
+    --bg-color: #d48bb8;
+    --active-page-color: var(--button-color);
+    --secondary-color: #c7568d;
     --topnav-color: var(--bg-color);
     --division-line-color: var(--secondary-color);
     --responsive-topnav-color: #cadcee;
     --link-color: var(--text-color);
-    --hover-link-color: #003541;
-    --button-color: #68b6e4;
+    --hover-link-color: #3b1123;
+    --button-color: #f799e0;
     --button-text-color: var(--text-color);
-    --disabled-button-color: #788b99;
-    --disabled-text-color: #424d53;
+    --disabled-button-color: #ffbdee;
+    --disabled-text-color: #000000;
     --favorite-color: #ffff00;
-    --table-hover-color: #00b7ce33;
+    --table-hover-color: var(--secondary-color);
     --search-highlight-color: #690000ad;
     --form-color: #8cbfe9;
     --form-field-color: #689bc5;
